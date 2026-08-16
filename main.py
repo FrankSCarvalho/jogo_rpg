@@ -14,3 +14,5 @@ ouro = 10
 xp = 0
 
 print(f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}")
+
+opcao = input("O que você deseja fazer? \n1 - Explorar \n2 - Ver status \n3 - Sair")
