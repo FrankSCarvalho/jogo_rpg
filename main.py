@@ -38,3 +38,9 @@ elif opcao == "3":
     print("Voce saiu do Jogo!")
 else:
     print("Opção invalida!")
+
+while True:
+    opcao = input("Digite uma opção: \n1 - Continuar \n2 - Sair\n")
+    if opcao == "2":
+        print("Voce fechou o Jogo!")
+        break
