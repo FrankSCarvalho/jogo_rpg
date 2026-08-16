@@ -7,12 +7,18 @@ print("Bem vindo ou mundo...")
 nome = input("Digite o nome do seu Personagem: ")
 print(f"Bem Vindo {nome}!")
 
-vida = 100
-mana = 50
-ataque = 10
-defesa = 5
-ouro = 10
-xp = 0
+personagem = {
+    "nome" : nome,
+    "vida" : 100,
+    "mana" : 50,
+    "ataque" : 10,
+    "defesa" : 5,
+    "ouro" : 10,
+    "xp" : 0
+}
+
+print(personagem)
+
 
 def mostrar_status(vida,mana,ataque,defesa,ouro,xp):
     status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
@@ -35,7 +41,7 @@ while True:
         else:
             print("Opção inválida!")
     elif opcao == "2":
-        status = mostrar_status(vida=vida,mana=mana,ataque=ataque,defesa=defesa,ouro=ouro,xp=xp)
+        status = mostrar_status(vida=personagem["vida"],mana=personagem["mana"],ataque=personagem["ataque"],defesa=personagem["defesa"],ouro=personagem["ouro"],xp=personagem["xp"])
         print(status)
     elif opcao == "3":
         print("Voce saiu do Jogo!")
