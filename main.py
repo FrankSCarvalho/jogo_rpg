@@ -59,11 +59,13 @@ while True:
         if opcao == "1":
             encontros_exploracao = ["Goblin", "Lobo","Baú"]
             escolha_aleatoria = random.choice(encontros_exploracao)
+            inimigo_encontrado = None
             if escolha_aleatoria in ENCONTROS:
                 inimigo_encontrado = ENCONTROS[escolha_aleatoria]
                 
             print("Voce decidiu Seguir pela trilha...")
-            if inimigo_encontrado:
+
+            if inimigo_encontrado != None:
                 print(f"Voce acaba de encontrar {inimigo_encontrado.nome}, ele possui {inimigo_encontrado.vida} de vida.")
                 opcao = input("O que deseja fazer?\n1. Atacar \n 2. Fugir\n")
                 if opcao == "1":
