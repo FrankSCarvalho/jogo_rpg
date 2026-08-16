@@ -17,14 +17,24 @@ personagem = {
     "xp" : 0
 }
 
-globin = {
-    "nome": "Globin",
+goblin = {
+    "nome": "goblin",
     "vida": 30,
     "ataque": 5,
     "defesa": 2
 }
 
-print(globin)
+print(goblin)
+
+class Inimigo:
+    def __init__(self,nome,vida,ataque,defesa):
+        self.nome = nome
+        self.vida = vida
+        self.ataque = ataque
+        self.defesa = defesa
+
+goblin2 = Inimigo("Goblin",70,5,3)
+print(goblin2)
 
 def mostrar_status(personagem):
     vida = personagem["vida"]
