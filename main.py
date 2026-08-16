@@ -30,6 +30,12 @@ def mostrar_status(personagem):
     status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
     return status
 
+def receber_dano(personagem, dano):
+    personagem["vida"] -= dano
+    print(personagem["vida"])
+
+receber_dano(personagem,10)
+
 while True:
     opcao = input("O que você deseja fazer? \n1 - Explorar \n2 - Ver status \n3 - Sair\n")
 
