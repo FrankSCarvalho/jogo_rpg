@@ -30,7 +30,13 @@ class Inimigo:
         self.vida -= dano
         print(f"{self.nome} recebe {dano} de dano.")
 
+goblin = Inimigo("Goblin",30,5,3)
+lobo = Inimigo("Lobo", 30,6,2)
 
+goblin.receber_dano(15)
+lobo.receber_dano(12)
+print(goblin.vida)
+print(lobo.vida)
 
 def mostrar_status(personagem):
     vida = personagem["vida"]
