@@ -20,8 +20,8 @@ personagem = {
 print(personagem)
 
 
-def mostrar_status(vida,mana,ataque,defesa,ouro,xp):
-    status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
+def mostrar_status(personagem):
+    status = f"---STATUS---\nVida: {personagem["vida"]}\nMana: {personagem["mana"]}\nAtaque: {personagem["ataque"]}\nDefesa: {personagem["defesa"]}\nOuro: {personagem["ouro"]} \nXP: {personagem["xp"]}"
     return status
 
 while True:
@@ -41,7 +41,7 @@ while True:
         else:
             print("Opção inválida!")
     elif opcao == "2":
-        status = mostrar_status(vida=personagem["vida"],mana=personagem["mana"],ataque=personagem["ataque"],defesa=personagem["defesa"],ouro=personagem["ouro"],xp=personagem["xp"])
+        status = mostrar_status(personagem)
         print(status)
     elif opcao == "3":
         print("Voce saiu do Jogo!")
