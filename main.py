@@ -35,6 +35,10 @@ class Inimigo:
 
 goblin2 = Inimigo("Goblin",70,5,3)
 print(goblin2)
+print(goblin2.nome)
+print(goblin2.vida)
+print(goblin2.ataque)
+print(goblin2.defesa)
 
 def mostrar_status(personagem):
     vida = personagem["vida"]
