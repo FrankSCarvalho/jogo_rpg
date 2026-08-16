@@ -21,7 +21,13 @@ print(personagem)
 
 
 def mostrar_status(personagem):
-    status = f"---STATUS---\nVida: {personagem["vida"]}\nMana: {personagem["mana"]}\nAtaque: {personagem["ataque"]}\nDefesa: {personagem["defesa"]}\nOuro: {personagem["ouro"]} \nXP: {personagem["xp"]}"
+    vida = personagem["vida"]
+    mana = personagem["mana"]
+    ataque = personagem["ataque"]
+    defesa = personagem["defesa"]
+    ouro = personagem["ouro"]
+    xp = personagem["xp"]
+    status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
     return status
 
 while True:
