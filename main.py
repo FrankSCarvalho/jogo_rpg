@@ -7,16 +7,17 @@ print("Bem vindo ou mundo...")
 nome = input("Digite o nome do seu Personagem: ")
 print(f"Bem Vindo {nome}!")
 
-personagem = {
-    "nome" : nome,
-    "vida" : 100,
-    "mana" : 50,
-    "ataque" : 10,
-    "defesa" : 5,
-    "ouro" : 10,
-    "xp" : 0
-}
+class Personagem:
+    def __init__(self,nome,vida,mana,ataque,defesa,ouro,xp):
+        self.nome = nome
+        self.vida = vida
+        self.mana=mana
+        self.ataque=ataque
+        self.defesa=defesa
+        self.ouro=ouro
+        self.xp=xp
 
+personagem = Personagem(nome,100,50,10,5,0,0)
 
 
 class Inimigo:
@@ -33,12 +34,12 @@ class Inimigo:
 
 
 def mostrar_status(personagem):
-    vida = personagem["vida"]
-    mana = personagem["mana"]
-    ataque = personagem["ataque"]
-    defesa = personagem["defesa"]
-    ouro = personagem["ouro"]
-    xp = personagem["xp"]
+    vida = personagem.vida
+    mana = personagem.mana
+    ataque = personagem.ataque
+    defesa = personagem.defesa
+    ouro = personagem.ouro
+    xp = personagem.xp
     status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
     return status
 
@@ -65,11 +66,11 @@ while True:
                 
             print("Voce decidiu Seguir pela trilha...")
 
-            if inimigo_encontrado != None:
+            if inimigo_encontrado is not None:
                 print(f"Voce acaba de encontrar {inimigo_encontrado.nome}, ele possui {inimigo_encontrado.vida} de vida.")
                 opcao = input("O que deseja fazer?\n1. Atacar \n 2. Fugir\n")
                 if opcao == "1":
-                    inimigo_encontrado.receber_dano(personagem["ataque"])
+                    inimigo_encontrado.receber_dano(personagem.ataque)
                 elif opcao == "2":
                     pass
                 else:
