@@ -61,8 +61,9 @@ while True:
             escolha_aleatoria = random.choice(encontros_exploracao)
             if escolha_aleatoria in ENCONTROS:
                 inimigo_encontrado = ENCONTROS[escolha_aleatoria]
+                
             print("Voce decidiu Seguir pela trilha...")
-            print(f"Voce encontrou {escolha_aleatoria}")
+            print(f"Voce acaba de encontrar {inimigo_encontrado.nome}, ele possui {inimigo_encontrado.vida} de vida.")
         elif opcao == "2":
             print("Vece decidiu voltar")
         else:
