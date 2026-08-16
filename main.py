@@ -17,14 +17,7 @@ personagem = {
     "xp" : 0
 }
 
-goblin = {
-    "nome": "goblin",
-    "vida": 30,
-    "ataque": 5,
-    "defesa": 2
-}
 
-print(goblin)
 
 class Inimigo:
     def __init__(self,nome,vida,ataque,defesa):
@@ -37,11 +30,7 @@ class Inimigo:
         self.vida -= dano
         print(f"{self.nome} recebe {dano} de dano.")
 
-goblin2 = Inimigo("Goblin",70,5,3)
 
-goblin2.receber_dano(10)
-
-print(goblin2.vida)
 
 def mostrar_status(personagem):
     vida = personagem["vida"]
