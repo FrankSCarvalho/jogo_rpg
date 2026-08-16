@@ -41,6 +41,10 @@ else:
 
 while True:
     opcao = input("Digite uma opção: \n1 - Continuar \n2 - Sair\n")
-    if opcao == "2":
+    if opcao == "1":
+        print("Voce decidiu continuar")
+    elif opcao == "2":
         print("Voce fechou o Jogo!")
         break
+    else:
+        print("Opção errada! Tente novamente.")
