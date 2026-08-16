@@ -17,6 +17,20 @@ class Personagem:
         self.ouro=ouro
         self.xp=xp
 
+    def receber_dano(self,dano):
+        self.vida -= dano
+        print(f"{self.nome} recebe {dano} de dano.")
+
+    def mostrar_status(self):
+        vida = personagem.vida
+        mana = personagem.mana
+        ataque = personagem.ataque
+        defesa = personagem.defesa
+        ouro = personagem.ouro
+        xp = personagem.xp
+        status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
+        return status
+
 personagem = Personagem(nome,100,50,10,5,0,0)
 
 
@@ -33,15 +47,7 @@ class Inimigo:
 
 
 
-def mostrar_status(personagem):
-    vida = personagem.vida
-    mana = personagem.mana
-    ataque = personagem.ataque
-    defesa = personagem.defesa
-    ouro = personagem.ouro
-    xp = personagem.xp
-    status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
-    return status
+
 
 ENCONTROS = {
     "Goblin": Inimigo("Goblin",30,5,3),
@@ -71,6 +77,7 @@ while True:
                 opcao = input("O que deseja fazer?\n1. Atacar \n 2. Fugir\n")
                 if opcao == "1":
                     inimigo_encontrado.receber_dano(personagem.ataque)
+                    personagem.receber_dano(inimigo_encontrado.ataque)
                 elif opcao == "2":
                     pass
                 else:
@@ -82,7 +89,7 @@ while True:
         else:
             print("Opção inválida!")
     elif opcao == "2":
-        status = mostrar_status(personagem)
+        status = personagem.mostrar_status()
         print(status)
     elif opcao == "3":
         print("Voce saiu do Jogo!")
