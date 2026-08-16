@@ -18,36 +18,27 @@ def mostrar_status():
     status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
     return status
 
-
-opcao = input("O que você deseja fazer? \n1 - Explorar \n2 - Ver status \n3 - Sair")
-
-if opcao == "1":
-    print("Você decidiu explorar...")
-    print("Você entra em uma floresta coberta pela névoa.")
-    opcao = input("Você encontra dois caminhos: \n1 - Seguir pela trilha \n2 - Voltar \nEscolha:")
-    if opcao == "1":
-        encontros_exploracao = ["Goblin", "Lobo","Baú"]
-        escolha_aleatoria = random.choice(encontros_exploracao)
-        print("Voce decidiu Seguir pela trilha...")
-        print(f"Voce encontrou {escolha_aleatoria}")
-    elif opcao == "2":
-        print("Vece decidiu voltar")
-    else:
-        print("Opção inválida!")
-elif opcao == "2":
-    status = mostrar_status()
-    print(status)
-elif opcao == "3":
-    print("Voce saiu do Jogo!")
-else:
-    print("Opção invalida!")
-
 while True:
-    opcao = input("Digite uma opção: \n1 - Continuar \n2 - Sair\n")
+    opcao = input("O que você deseja fazer? \n1 - Explorar \n2 - Ver status \n3 - Sair\n")
+
     if opcao == "1":
-        print("Voce decidiu continuar")
+        print("Você decidiu explorar...")
+        print("Você entra em uma floresta coberta pela névoa.")
+        opcao = input("Você encontra dois caminhos: \n1 - Seguir pela trilha \n2 - Voltar \nEscolha:")
+        if opcao == "1":
+            encontros_exploracao = ["Goblin", "Lobo","Baú"]
+            escolha_aleatoria = random.choice(encontros_exploracao)
+            print("Voce decidiu Seguir pela trilha...")
+            print(f"Voce encontrou {escolha_aleatoria}")
+        elif opcao == "2":
+            print("Vece decidiu voltar")
+        else:
+            print("Opção inválida!")
     elif opcao == "2":
-        print("Voce fechou o Jogo!")
+        status = mostrar_status()
+        print(status)
+    elif opcao == "3":
+        print("Voce saiu do Jogo!")
         break
     else:
-        print("Opção errada! Tente novamente.")
+        print("Opção invalida!")
