@@ -17,8 +17,14 @@ personagem = {
     "xp" : 0
 }
 
-print(personagem)
+globin = {
+    "nome": "Globin",
+    "vida": 30,
+    "ataque": 5,
+    "defesa": 2
+}
 
+print(globin)
 
 def mostrar_status(personagem):
     vida = personagem["vida"]
@@ -34,7 +40,7 @@ def receber_dano(personagem, dano):
     personagem["vida"] -= dano
     print(personagem["vida"])
 
-receber_dano(personagem,10)
+
 
 while True:
     opcao = input("O que você deseja fazer? \n1 - Explorar \n2 - Ver status \n3 - Sair\n")
