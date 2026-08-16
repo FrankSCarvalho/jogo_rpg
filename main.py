@@ -88,7 +88,10 @@ while True:
                 opcao = input("O que deseja fazer?\n1. Atacar \n 2. Fugir\n")
                 if opcao == "1":
                     inimigo_encontrado.receber_dano(personagem.ataque)
-                    personagem.receber_dano(inimigo_encontrado.ataque)
+                    if inimigo_encontrado.esta_vivo():
+                        personagem.receber_dano(inimigo_encontrado.ataque)
+                    else:
+                        print(f"{inimigo_encontrado.nome} morreu.")
                 elif opcao == "2":
                     pass
                 else:
