@@ -63,7 +63,17 @@ while True:
                 inimigo_encontrado = ENCONTROS[escolha_aleatoria]
                 
             print("Voce decidiu Seguir pela trilha...")
-            print(f"Voce acaba de encontrar {inimigo_encontrado.nome}, ele possui {inimigo_encontrado.vida} de vida.")
+            if inimigo_encontrado:
+                print(f"Voce acaba de encontrar {inimigo_encontrado.nome}, ele possui {inimigo_encontrado.vida} de vida.")
+                opcao = input("O que deseja fazer?\n1. Atacar \n 2. Fugir\n")
+                if opcao == "1":
+                    inimigo_encontrado.receber_dano(personagem["ataque"])
+                elif opcao == "2":
+                    pass
+                else:
+                    print("Opção inválida!")
+            else:
+                print(f"Voce encontrou {escolha_aleatoria}")
         elif opcao == "2":
             print("Vece decidiu voltar")
         else:
