@@ -14,7 +14,7 @@ defesa = 5
 ouro = 10
 xp = 0
 
-def mostrar_status():
+def mostrar_status(vida,mana,ataque,defesa,ouro,xp):
     status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
     return status
 
@@ -35,7 +35,7 @@ while True:
         else:
             print("Opção inválida!")
     elif opcao == "2":
-        status = mostrar_status()
+        status = mostrar_status(vida=vida,mana=mana,ataque=ataque,defesa=defesa,ouro=ouro,xp=xp)
         print(status)
     elif opcao == "3":
         print("Voce saiu do Jogo!")
