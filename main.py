@@ -60,8 +60,7 @@ while True:
             encontros_exploracao = ["Goblin", "Lobo","Baú"]
             escolha_aleatoria = random.choice(encontros_exploracao)
             if escolha_aleatoria in ENCONTROS:
-                #aqui eu travei
-                pass
+                inimigo_encontrado = ENCONTROS[escolha_aleatoria]
             print("Voce decidiu Seguir pela trilha...")
             print(f"Voce encontrou {escolha_aleatoria}")
         elif opcao == "2":
