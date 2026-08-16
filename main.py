@@ -30,13 +30,7 @@ class Inimigo:
         self.vida -= dano
         print(f"{self.nome} recebe {dano} de dano.")
 
-goblin = Inimigo("Goblin",30,5,3)
-lobo = Inimigo("Lobo", 30,6,2)
 
-goblin.receber_dano(15)
-lobo.receber_dano(12)
-print(goblin.vida)
-print(lobo.vida)
 
 def mostrar_status(personagem):
     vida = personagem["vida"]
@@ -48,9 +42,10 @@ def mostrar_status(personagem):
     status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
     return status
 
-def receber_dano(personagem, dano):
-    personagem["vida"] -= dano
-    print(personagem["vida"])
+ENCONTROS = {
+    "Goblin": Inimigo("Goblin",30,5,3),
+    "Lobo": Inimigo("Lobo",36,6,3)
+}
 
 
 
@@ -64,6 +59,9 @@ while True:
         if opcao == "1":
             encontros_exploracao = ["Goblin", "Lobo","Baú"]
             escolha_aleatoria = random.choice(encontros_exploracao)
+            if escolha_aleatoria in ENCONTROS:
+                #aqui eu travei
+                pass
             print("Voce decidiu Seguir pela trilha...")
             print(f"Voce encontrou {escolha_aleatoria}")
         elif opcao == "2":
