@@ -33,12 +33,15 @@ class Inimigo:
         self.ataque = ataque
         self.defesa = defesa
 
+    def receber_dano(self, dano):
+        self.vida -= dano
+        print(f"{self.nome} recebe {dano} de dano.")
+
 goblin2 = Inimigo("Goblin",70,5,3)
-print(goblin2)
-print(goblin2.nome)
+
+goblin2.receber_dano(10)
+
 print(goblin2.vida)
-print(goblin2.ataque)
-print(goblin2.defesa)
 
 def mostrar_status(personagem):
     vida = personagem["vida"]
