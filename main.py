@@ -22,14 +22,19 @@ class Personagem:
         print(f"{self.nome} recebe {dano} de dano.")
 
     def mostrar_status(self):
-        vida = personagem.vida
-        mana = personagem.mana
-        ataque = personagem.ataque
-        defesa = personagem.defesa
-        ouro = personagem.ouro
-        xp = personagem.xp
+        vida = self.vida
+        mana = self.mana
+        ataque = self.ataque
+        defesa = self.defesa
+        ouro = self.ouro
+        xp = self.xp
         status = f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}"
         return status
+    def esta_vivo(self):
+        if self.vida > 0:
+            return True
+        else:
+            return False
 
 personagem = Personagem(nome,100,50,10,5,0,0)
 
@@ -44,6 +49,12 @@ class Inimigo:
     def receber_dano(self, dano):
         self.vida -= dano
         print(f"{self.nome} recebe {dano} de dano.")
+
+    def esta_vivo(self):
+        if self.vida > 0:
+            return True
+        else:
+            return False
 
 
 
