@@ -1,3 +1,4 @@
+import random
 
 print("===================================")
 print("BEM VINDO À CRÔNICAS DA NÉVOA")
@@ -15,6 +16,10 @@ xp = 0
 
 print(f"---STATUS---\nVida: {vida}\nMana: {mana}\nAtaque: {ataque}\nDefesa: {defesa}\nOuro: {ouro} \nXP: {xp}")
 
+encontros_exploracao = ["Goblin", "Lobo","Baú"]
+escolha_aleatoria = random.choice(encontros_exploracao)
+
+
 opcao = input("O que você deseja fazer? \n1 - Explorar \n2 - Ver status \n3 - Sair")
 
 if opcao == "1":
@@ -22,7 +27,8 @@ if opcao == "1":
     print("Você entra em uma floresta coberta pela névoa.")
     opcao = input("Você encontra dois caminhos: \n1 - Seguir pela trilha \n2 - Voltar \nEscolha:")
     if opcao == "1":
-        print("Voce decidiu Seguir pela trilha")
+        print("Voce decidiu Seguir pela trilha...")
+        print(f"Voce encontrou {escolha_aleatoria}")
     elif opcao == "2":
         print("Vece decidiu voltar")
     else:
