@@ -65,6 +65,18 @@ ENCONTROS = {
     "Lobo": Inimigo("Lobo",36,6,3)
 }
 
+def combate(personagem, inimigo):
+    while True:
+        if inimigo.esta_vivo():
+           inimigo.receber_dano(personagem.ataque)
+        else:
+            print(f"{inimigo.nome} morreu!")
+            break
+        if personagem.esta_vivo():
+            personagem.receber_dano(inimigo.ataque)
+        else:
+            print(f"Voce Morreu!")
+            break
 
 
 while True:
@@ -87,11 +99,7 @@ while True:
                 print(f"Voce acaba de encontrar {inimigo_encontrado.nome}, ele possui {inimigo_encontrado.vida} de vida.")
                 opcao = input("O que deseja fazer?\n1. Atacar \n 2. Fugir\n")
                 if opcao == "1":
-                    inimigo_encontrado.receber_dano(personagem.ataque)
-                    if inimigo_encontrado.esta_vivo():
-                        personagem.receber_dano(inimigo_encontrado.ataque)
-                    else:
-                        print(f"{inimigo_encontrado.nome} morreu.")
+                    combate(personagem,inimigo_encontrado)
                 elif opcao == "2":
                     pass
                 else:
