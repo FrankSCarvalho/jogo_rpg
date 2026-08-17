@@ -67,12 +67,12 @@ ENCONTROS = {
 
 def combate(personagem, inimigo):
     while True:
-        if inimigo.esta_vivo():
+        if inimigo.esta_vivo() and personagem.esta_vivo():
            inimigo.receber_dano(personagem.ataque)
         else:
             print(f"{inimigo.nome} morreu!")
             break
-        if personagem.esta_vivo():
+        if personagem.esta_vivo() and inimigo.esta_vivo():
             personagem.receber_dano(inimigo.ataque)
         else:
             print(f"Voce Morreu!")
