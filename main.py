@@ -66,10 +66,11 @@ ENCONTROS = {
 }
 
 def combate(personagem, inimigo):
-    while inimigo.esta_vivo() or personagem.esta_vivo():
+    while inimigo.esta_vivo() and personagem.esta_vivo():
         
-           inimigo.receber_dano(personagem.ataque)
-           personagem.receber_dano(inimigo.ataque)
+        inimigo.receber_dano(personagem.ataque)
+        if inimigo.esta_vivo():
+            personagem.receber_dano(inimigo.ataque)
         
 
 
